@@ -1,0 +1,2 @@
+module OUTPUTREG();
+endmodule

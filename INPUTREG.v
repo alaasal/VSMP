@@ -1,0 +1,2 @@
+module INPUTREG();
+endmodule

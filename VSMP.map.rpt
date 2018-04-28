@@ -1,0 +1,420 @@
+Analysis & Synthesis report for VSMP
+Sat Apr 28 21:42:11 2018
+Quartus II 32-bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Port Connectivity Checks: "CU:VSMP_CU"
+ 13. Port Connectivity Checks: "MEMORY:VSMP_MEMORY"
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                       ;
++------------------------------------+-----------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Apr 28 21:42:11 2018         ;
+; Quartus II 32-bit Version          ; 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; VSMP                                          ;
+; Top-level Entity Name              ; VSMP                                          ;
+; Family                             ; Cyclone IV GX                                 ;
+; Total logic elements               ; 3                                             ;
+;     Total combinational functions  ; 3                                             ;
+;     Dedicated logic registers      ; 3                                             ;
+; Total registers                    ; 3                                             ;
+; Total pins                         ; 63                                            ;
+; Total virtual pins                 ; 0                                             ;
+; Total memory bits                  ; 0                                             ;
+; Embedded Multiplier 9-bit elements ; 0                                             ;
+; Total GXB Receiver Channel PCS     ; 0                                             ;
+; Total GXB Receiver Channel PMA     ; 0                                             ;
+; Total GXB Transmitter Channel PCS  ; 0                                             ;
+; Total GXB Transmitter Channel PMA  ; 0                                             ;
+; Total PLLs                         ; 0                                             ;
++------------------------------------+-----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; VSMP               ; VSMP               ;
+; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                 ;
++----------------------------------+-----------------+------------------------+------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                   ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------+---------+
+; VSMP.v                           ; yes             ; User Verilog HDL File  ; C:/Users/ELHOSINY/Documents/VSMP/VSMP.v        ;         ;
+; MEMORY.v                         ; yes             ; User Verilog HDL File  ; C:/Users/ELHOSINY/Documents/VSMP/MEMORY.v      ;         ;
+; INTERNALBUS.v                    ; yes             ; User Verilog HDL File  ; C:/Users/ELHOSINY/Documents/VSMP/INTERNALBUS.v ;         ;
+; CU.v                             ; yes             ; User Verilog HDL File  ; C:/Users/ELHOSINY/Documents/VSMP/CU.v          ;         ;
+; ALU.v                            ; yes             ; User Verilog HDL File  ; C:/Users/ELHOSINY/Documents/VSMP/ALU.v         ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------+---------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++--------------------------+------------------+
+; Resource                 ; Usage            ;
++--------------------------+------------------+
+; I/O pins                 ; 63               ;
+; DSP block 9-bit elements ; 0                ;
+; Maximum fan-out          ; 4                ;
+; Total fan-out            ; 78               ;
+; Average fan-out          ; 0.59             ;
++--------------------------+------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                     ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
+; |VSMP                      ; 3 (0)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 63   ; 0            ; |VSMP               ;              ;
+;    |CU:VSMP_CU|            ; 3 (3)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VSMP|CU:VSMP_CU    ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                         ;
++-----------------------------------------+--------------------------------------------------+
+; Register name                           ; Reason for Removal                               ;
++-----------------------------------------+--------------------------------------------------+
+; MEMORY:VSMP_MEMORY|MEINSTR[1..3]        ; Stuck at GND due to stuck port data_in           ;
+; MEMORY:VSMP_MEMORY|MEDATA[0..3]         ; Stuck at GND due to stuck port data_in           ;
+; MEMORY:VSMP_MEMORY|MEINSTR[0]           ; Stuck at GND due to stuck port data_in           ;
+; INTERNALBUS:VSMP_INTERNALBUS|ACCB[0..3] ; Stuck at GND due to stuck port data_in           ;
+; CU:VSMP_CU|INSTR_reg[0..3]              ; Stuck at GND due to stuck port data_in           ;
+; INTERNALBUS:VSMP_INTERNALBUS|ACCA[1..3] ; Merged with INTERNALBUS:VSMP_INTERNALBUS|ACCA[0] ;
+; CU:VSMP_CU|LOADA                        ; Merged with CU:VSMP_CU|ADDSUB                    ;
+; CU:VSMP_CU|LOADB                        ; Merged with CU:VSMP_CU|ADDSUB                    ;
+; CU:VSMP_CU|ENABLEALU                    ; Merged with CU:VSMP_CU|ADDSUB                    ;
+; INTERNALBUS:VSMP_INTERNALBUS|ACCA[0]    ; Stuck at GND due to stuck port data_in           ;
+; CU:VSMP_CU|ADDSUB                       ; Stuck at GND due to stuck port data_in           ;
+; Total Number of Removed Registers = 24  ;                                                  ;
++-----------------------------------------+--------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                               ;
++-------------------------------+---------------------------+---------------------------------------------------------------+
+; Register name                 ; Reason for Removal        ; Registers Removed due to This Register                        ;
++-------------------------------+---------------------------+---------------------------------------------------------------+
+; MEMORY:VSMP_MEMORY|MEINSTR[1] ; Stuck at GND              ; INTERNALBUS:VSMP_INTERNALBUS|ACCB[3], CU:VSMP_CU|INSTR_reg[1] ;
+;                               ; due to stuck port data_in ;                                                               ;
+; MEMORY:VSMP_MEMORY|MEINSTR[0] ; Stuck at GND              ; CU:VSMP_CU|INSTR_reg[0], CU:VSMP_CU|ADDSUB                    ;
+;                               ; due to stuck port data_in ;                                                               ;
+; MEMORY:VSMP_MEMORY|MEINSTR[3] ; Stuck at GND              ; CU:VSMP_CU|INSTR_reg[3]                                       ;
+;                               ; due to stuck port data_in ;                                                               ;
+; MEMORY:VSMP_MEMORY|MEINSTR[2] ; Stuck at GND              ; CU:VSMP_CU|INSTR_reg[2]                                       ;
+;                               ; due to stuck port data_in ;                                                               ;
+; MEMORY:VSMP_MEMORY|MEDATA[0]  ; Stuck at GND              ; INTERNALBUS:VSMP_INTERNALBUS|ACCA[0]                          ;
+;                               ; due to stuck port data_in ;                                                               ;
++-------------------------------+---------------------------+---------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 3     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; CU:VSMP_CU|PHASE_reg[0]                ; 4       ;
+; CU:VSMP_CU|PHASE_reg[1]                ; 3       ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CU:VSMP_CU"                                                                                                                                                            ;
++-------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                                                                               ;
++-------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; IN    ; Output ; Info     ; Explicitly unconnected                                                                                                                                                ;
+; OUT   ; Output ; Info     ; Explicitly unconnected                                                                                                                                                ;
+; PHASE ; Output ; Warning  ; Output or bidir port (3 bits) is smaller than the port expression (4 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
++-------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MEMORY:VSMP_MEMORY"                                                                                                                                                             ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; P    ; Input ; Warning  ; Input port expression (4 bits) is wider than the input port (3 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Analysis & Synthesis
+    Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Apr 28 21:42:08 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VSMP -c VSMP
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file vsmp.v
+    Info (12023): Found entity 1: VSMP
+Warning (10261): Verilog HDL Event Control warning at MEMORY.v(47): Event Control contains a complex event expression
+Warning (10261): Verilog HDL Event Control warning at MEMORY.v(58): Event Control contains a complex event expression
+Info (12021): Found 1 design units, including 1 entities, in source file memory.v
+    Info (12023): Found entity 1: MEMORY
+Info (12021): Found 1 design units, including 1 entities, in source file internalbus.v
+    Info (12023): Found entity 1: INTERNALBUS
+Info (12021): Found 1 design units, including 1 entities, in source file cu.v
+    Info (12023): Found entity 1: CU
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: ALU
+Info (12127): Elaborating entity "VSMP" for the top level hierarchy
+Info (12128): Elaborating entity "MEMORY" for hierarchy "MEMORY:VSMP_MEMORY"
+Warning (10855): Verilog HDL warning at MEMORY.v(24): initial value for variable MEMORY1 should be constant
+Warning (10855): Verilog HDL warning at MEMORY.v(24): initial value for variable MEMORY2 should be constant
+Warning (10855): Verilog HDL warning at MEMORY.v(24): initial value for variable MEMORY3 should be constant
+Warning (10855): Verilog HDL warning at MEMORY.v(24): initial value for variable MEMORY4 should be constant
+Warning (10230): Verilog HDL assignment warning at MEMORY.v(35): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at MEMORY.v(41): truncated value with size 32 to match size of target (2)
+Warning (10030): Net "MEMORY1" at MEMORY.v(13) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "MEMORY2" at MEMORY.v(14) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "MEMORY3" at MEMORY.v(15) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "MEMORY4" at MEMORY.v(16) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "CU" for hierarchy "CU:VSMP_CU"
+Warning (10230): Verilog HDL assignment warning at CU.v(20): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at CU.v(39): truncated value with size 32 to match size of target (2)
+Warning (10034): Output port "IN" at CU.v(4) has no driver
+Warning (10034): Output port "OUT" at CU.v(5) has no driver
+Info (12128): Elaborating entity "INTERNALBUS" for hierarchy "INTERNALBUS:VSMP_INTERNALBUS"
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:VSMP_ALU"
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "RESULT3_PHASE[3]" is missing source, defaulting to GND
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "RESULT1_INSTR[0]" is stuck at GND
+    Warning (13410): Pin "RESULT1_INSTR[1]" is stuck at GND
+    Warning (13410): Pin "RESULT1_INSTR[2]" is stuck at GND
+    Warning (13410): Pin "RESULT1_INSTR[3]" is stuck at GND
+    Warning (13410): Pin "RESULT2_DATA[0]" is stuck at GND
+    Warning (13410): Pin "RESULT2_DATA[1]" is stuck at GND
+    Warning (13410): Pin "RESULT2_DATA[2]" is stuck at GND
+    Warning (13410): Pin "RESULT2_DATA[3]" is stuck at GND
+    Warning (13410): Pin "RESULT3_PHASE[2]" is stuck at GND
+    Warning (13410): Pin "RESULT3_PHASE[3]" is stuck at GND
+    Warning (13410): Pin "RESULLT4_ENABLEALU" is stuck at GND
+    Warning (13410): Pin "RESULT6_LOADA" is stuck at GND
+    Warning (13410): Pin "RESULT7_LOADB" is stuck at GND
+    Warning (13410): Pin "RESULT8_ADDSUB" is stuck at GND
+    Warning (13410): Pin "RESULT10_ACCA[0]" is stuck at GND
+    Warning (13410): Pin "RESULT10_ACCA[1]" is stuck at GND
+    Warning (13410): Pin "RESULT10_ACCA[2]" is stuck at GND
+    Warning (13410): Pin "RESULT10_ACCA[3]" is stuck at GND
+    Warning (13410): Pin "RESULT11_ACCB[0]" is stuck at GND
+    Warning (13410): Pin "RESULT11_ACCB[1]" is stuck at GND
+    Warning (13410): Pin "RESULT11_ACCB[2]" is stuck at GND
+    Warning (13410): Pin "RESULT11_ACCB[3]" is stuck at GND
+    Warning (13410): Pin "RESULT_ALUOUT[0]" is stuck at GND
+    Warning (13410): Pin "RESULT_ALUOUT[1]" is stuck at GND
+    Warning (13410): Pin "RESULT_ALUOUT[2]" is stuck at GND
+    Warning (13410): Pin "RESULT_ALUOUT[3]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 33 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "meme1[0]"
+    Warning (15610): No output dependent on input pin "meme1[1]"
+    Warning (15610): No output dependent on input pin "meme1[2]"
+    Warning (15610): No output dependent on input pin "meme1[3]"
+    Warning (15610): No output dependent on input pin "meme1[4]"
+    Warning (15610): No output dependent on input pin "meme1[5]"
+    Warning (15610): No output dependent on input pin "meme1[6]"
+    Warning (15610): No output dependent on input pin "meme1[7]"
+    Warning (15610): No output dependent on input pin "meme2[0]"
+    Warning (15610): No output dependent on input pin "meme2[1]"
+    Warning (15610): No output dependent on input pin "meme2[2]"
+    Warning (15610): No output dependent on input pin "meme2[3]"
+    Warning (15610): No output dependent on input pin "meme2[4]"
+    Warning (15610): No output dependent on input pin "meme2[5]"
+    Warning (15610): No output dependent on input pin "meme2[6]"
+    Warning (15610): No output dependent on input pin "meme2[7]"
+    Warning (15610): No output dependent on input pin "meme3[0]"
+    Warning (15610): No output dependent on input pin "meme3[1]"
+    Warning (15610): No output dependent on input pin "meme3[2]"
+    Warning (15610): No output dependent on input pin "meme3[3]"
+    Warning (15610): No output dependent on input pin "meme3[4]"
+    Warning (15610): No output dependent on input pin "meme3[5]"
+    Warning (15610): No output dependent on input pin "meme3[6]"
+    Warning (15610): No output dependent on input pin "meme3[7]"
+    Warning (15610): No output dependent on input pin "meme4[0]"
+    Warning (15610): No output dependent on input pin "meme4[1]"
+    Warning (15610): No output dependent on input pin "meme4[2]"
+    Warning (15610): No output dependent on input pin "meme4[3]"
+    Warning (15610): No output dependent on input pin "meme4[4]"
+    Warning (15610): No output dependent on input pin "meme4[5]"
+    Warning (15610): No output dependent on input pin "meme4[6]"
+    Warning (15610): No output dependent on input pin "meme4[7]"
+    Warning (15610): No output dependent on input pin "INPUT1"
+Info (21057): Implemented 66 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 34 input pins
+    Info (21059): Implemented 29 output pins
+    Info (21061): Implemented 3 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 80 warnings
+    Info: Peak virtual memory: 396 megabytes
+    Info: Processing ended: Sat Apr 28 21:42:11 2018
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+
